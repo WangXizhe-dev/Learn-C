@@ -3,8 +3,8 @@
 > 📚 我的 C 语言学习仓库  
 > From Zero to Programmer 🚀
 
-![GitHub last commit](https://img.shields.io/github/last-commit/yourname/Learn-C)
-![GitHub repo size](https://img.shields.io/github/repo-size/yourname/Learn-C)
+![GitHub last commit](https://img.shields.io/github/last-commit/WangXizhe-dev/Learn-C)
+![GitHub repo size](https://img.shields.io/github/repo-size/WangXizhe-dev/Learn-C)
 ![Language](https://img.shields.io/badge/language-C-blue)
 
 ---
