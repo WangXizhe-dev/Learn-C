@@ -12,4 +12,5 @@ int main(){
     else{
         printf("您的钱不够\n");
     }
+    return 0;
 }
