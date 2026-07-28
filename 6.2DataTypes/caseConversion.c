@@ -7,8 +7,10 @@ int main(){
     n = (int)letter;
     if (n >= 97 && n <= 122){
         printf("%c -> %c\n",letter,letter-32);
-    }else{
+    }else if(n >= 65 && n <= 90){
         printf("%c -> %c\n",letter,letter+32);
+    }else{
+        printf("无效符号\n");
     }
 
     return 0;
