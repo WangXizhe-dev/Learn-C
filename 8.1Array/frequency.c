@@ -7,9 +7,10 @@ int main(){
 }
 
 void frequency(){
-    int num[10];
+    const int number = 10;
+    int num[number];
     int i = 0;
-    for (;i<10;i++){
+    for (;i<number;i++){
         num[i] = 0;
     }
     printf("请输入0~9之间的整数,程序将统计每种数字出现次数,输入-1结束\n");
@@ -17,7 +18,7 @@ void frequency(){
     scanf("%d",&n);
     while (n != -1)
     {
-        if (n >= 0 && n <= 9){
+        if (n >= 0 && n <= number -1){
             num[n] += 1;
         }else{
             printf("请输入0~9之间的整数\n");
@@ -26,7 +27,7 @@ void frequency(){
         scanf("%d",&n);
     }
     i = 0;
-    for (;i<10;i++){
+    for (;i<number;i++){
         printf("%d出现了%d次\n",i,num[i]);
     }
 }
