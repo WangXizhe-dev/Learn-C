@@ -14,21 +14,22 @@ void input(){
     int n = 0;
     printf("请输入一个数字，程序会查找数据库中是否存在");
     scanf("%d",&n);
-    int place = search(n,num,len);
-    if (place== -1){
+    int loc = search(n,num,len);
+    if (loc== -1){
         printf("数据库中不存在\n");
     }else{
-        printf("存在，在第%d号位置\n",place+1);
+        printf("存在，在第%d号位置\n",loc+1);
     }
 }
 
 int search(int key,int num[],int len){
     int i = 0;
-    int place = -1;
+    int loc = -1;
     for(;i < len;i++){
         if(key == num[i]){
-            place = i;
+            loc = i;
+            break;
         }
     }
-    return place;
+    return loc;
 }
