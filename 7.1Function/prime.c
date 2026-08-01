@@ -2,9 +2,13 @@
 int isPrime(int n){
     int isPrime = 1;
     int i = 2;
-    for (;i < n;i++){
+    if (n == 1){
+        isPrime = 0;
+    }
+    for (;i*i <= n;i++){
         if (n % i == 0){
             isPrime = 0;
+            break;
         }
     }
     return isPrime;
