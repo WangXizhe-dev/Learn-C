@@ -1,31 +1,33 @@
 #include<stdio.h>
-int isPrime(int n);
+
+int isPrime(int x,int knownPrimes[],int numberOfKnownPrimes);
 
 int main(){
-    int n = 0;
-    printf("请输入一个正整数");
-    scanf("%d",&n);
-    if (isPrime(n)){
-        printf("是质数\n");
-    }else{
-        printf("不是质数\n");
+    const int number = 100;
+    int prime[number]={2};
+    int cnt = 1;
+    int i = 3;
+    for(;cnt<number;i++){
+        if (isPrime(i,prime,cnt)){
+            prime[cnt++] = i;
+        }
     }
+    for(i = 0;i < number;i++){
+        printf("%d ",prime[i]);
+    }
+    printf("\n");
     return 0;
 }
 
-int isPrime(int n){
-    int prime[100] = {2,3};
-    int isPrime = 1;
-    int i = 2;
-    if (n == 1){
-        isPrime = 0;
-    }
-    for (;i*i <= n;i++){
-        if (n % i == 0){
-            isPrime = 0;
+int isPrime(int x,int knownPrimes[],int numberOfKnownPrimes){
+    int ret = 1;
+    int i = 0;
+    for (;i < numberOfKnownPrimes;i++){
+        if (x % knownPrimes[i] == 0){
+            ret = 0;
             break;
         }
     }
-    return isPrime;
+    return ret;
 
 }
