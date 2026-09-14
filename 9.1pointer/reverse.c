@@ -3,7 +3,7 @@
 void reverse(int *arr,int n);
 
 int main(){
-    int arr[] = {1,3,4,5,8};
+    int arr[] = {1,3,4,5,8,10};
     int len = sizeof(arr)/sizeof(arr[0]);
     reverse(arr,len);
     for (int i = 0 ;i<len;i++){
@@ -14,7 +14,7 @@ int main(){
 }
 
 void reverse(int *arr,int n){
-    for(int i = 0;i<(n+n%2)/2;i++){
+    for(int i = 0;i<n/2;i++){
         int t = *(arr + i);
         *(arr + i) = *(arr + n - i - 1) ;
         *(arr + n - i - 1) = t;
