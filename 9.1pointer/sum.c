@@ -3,7 +3,7 @@ void input(int *p);
 int sum(int *p,int n);
 
 int main(){
-    int arr[3];
+    int arr[5];
     input(arr);
     printf("%d\n",sum(arr,sizeof(arr)/sizeof(arr[0])));
     return 0;
