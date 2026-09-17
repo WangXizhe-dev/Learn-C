@@ -36,5 +36,6 @@ int main(){
     printf("这%d个数的最小值为%d\n",n,min);
     //平均值
     printf("这%d个数的平均值为%f\n",n,(double)sum/n);
+    free(arr);
     return 0;
 }
