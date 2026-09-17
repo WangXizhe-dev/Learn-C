@@ -12,6 +12,7 @@ int main(){
         return 1;
     }
     printf("所有数之和为%d\n",sum(arr,len));
+    free (arr);
     return 0;
 }
 
