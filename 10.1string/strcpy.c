@@ -11,12 +11,19 @@ int main(void){
 }
 
 char* mycpy(char* dst,const char* src){
-    int i = 0;
-    while(src[i] != '\0'){
-        dst[i] = src[i];
-        i++;
+    // int i = 0;
+    // while(src[i] != '\0'){
+    //     dst[i] = src[i];
+    //     i++;
+    // }
+    // dst[i] = '\0';
+    // return dst;
+    char* ret = dst;
+    while(*src != '\0'){
+        *dst = *src;
+        dst ++;
+        src ++;
     }
-    dst[i] = '\0';
-    return dst;
-
+    *dst = '\0';
+    return ret;
 }
