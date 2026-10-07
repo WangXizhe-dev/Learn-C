@@ -1,20 +1,25 @@
 #include<stdio.h>
+#include<string.h>
+
 int main(void){
     printf("请输入一串字符\n");
     char s[100];
-    scanf("%99s",s);
+    if (fgets(s, sizeof(s), stdin) == NULL) {
+        return 1;
+    }
+    s[strcspn(s, "\n")] = '\0';
     int i = 0;
     int up=0,low=0,num=0,spa=0,oth = 0;
     while(s[i] != '\0'){
-        if(s[i] >= 65 && s[i]<= 90){
+        if(s[i] >= 'A' && s[i]<= 'Z'){
             up ++;
             s[i] += 'a' - 'A';
-        }else if(s[i] >= 97 && s[i]<= 122){
+        }else if(s[i] >= 'a' && s[i]<= 'z'){
             low ++;
             s[i] += 'A' - 'a';
-        }else if(s[i] >= 48 && s[i]<= 57){
+        }else if(s[i] >= '0' && s[i]<= '9'){
             num ++;
-        }else if(s[i] == 32){
+        }else if(s[i] == ' '){
             spa ++;
         }else{
             oth ++;
