@@ -4,26 +4,26 @@
 char* mycpy(char* dst,const char* src);
 
 int main(void){
-    char s1[] = "abc";
-    char s2[] = "abc";
-    mycpy(s1,s2);
+    char src[] = "hello";
+    char dst[100];
+    //mycpy(dst,src);
+    printf("src:%s\n",src);
+    printf("dst:%s\n",mycpy(dst,src));
     return 0;
 }
 
 char* mycpy(char* dst,const char* src){
-    // int i = 0;
-    // while(src[i] != '\0'){
-    //     dst[i] = src[i];
-    //     i++;
+    // char* ret = dst;
+    // while(*src != '\0'){
+    //     *dst = *src;
+    //     dst ++;
+    //     src ++;
     // }
-    // dst[i] = '\0';
-    // return dst;
-    char* ret = dst;
-    while(*src != '\0'){
-        *dst = *src;
-        dst ++;
-        src ++;
+    // *dst = '\0';
+    // return ret;
+    char* ret = dst;//保存首地址
+    while((*dst++ = *src++)!= '\0'){
+
     }
-    *dst = '\0';
-    return ret;
+    return ret;//返回dst的首地址
 }
