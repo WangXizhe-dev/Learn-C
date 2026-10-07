@@ -3,25 +3,22 @@
 int main(void){
     printf("请输入一个字符串\n");
     char s[100];
-    if(scanf("%99s",s) != 1){
-        printf("输入失败");
+    if (fgets(s, sizeof(s), stdin) == NULL) {
         return 1;
     }
-    int c[52];
+    int c[26] = {0};
     int i = 0;
-    for(;i<sizeof(c)/sizeof(c[0]);i++){
-        c[i] = 0;
-    }
-    for(i = 0;i < strlen(s);i++){
-        if((int)s[i] >= 'a'){
+    int len = strlen(s);
+    for(;i < len;i++){
+        if((int)s[i] >= 'a' && (int)s[i] <= 'z'){
             c[(int)s[i] - 'a']++;
-        }else{
+        }else if((int)s[i] >= 'A' && (int)s[i] <= 'Z'){
             c[(int)s[i] - 'A']++;
         }
     }
     for(i = 0;i<sizeof(c)/sizeof(c[0]);i++){
         if (c[i]){
-            printf("%c:%d\n",(char)(i + 'a'),c[i]);
+            printf("%c/%c:%d\n",i + 'a','A' + i,c[i]);
         }
     }
     return 0;
