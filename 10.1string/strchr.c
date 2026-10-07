@@ -18,10 +18,12 @@ int main(void){
     printf("%s\n",t);
     free(t);
     //拷贝目标字母前面一段
+    char c = *p2;
     *p2 = '\0';
     char* n = (char*)malloc(strlen(s2)+1);
     strcpy(n,s2);
     printf("%s\n",n);
+    *p2 = c;
     free(n);
     return 0;
 }
